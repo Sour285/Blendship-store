@@ -3,14 +3,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BlendSip™ India | Portable USB Juicer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BlendSip™ India | Online Store</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f7f7f7;
+      font-family: Arial, sans-serif;
       color: #333;
     }
     header {
@@ -19,39 +19,42 @@
       padding: 1rem;
       text-align: center;
     }
-    .container {
-      max-width: 600px;
+    .store {
+      max-width: 900px;
       margin: auto;
       padding: 2rem;
-      background: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
     }
-    img {
+    .product {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      padding: 1rem;
+      text-align: center;
+    }
+    .product img {
       width: 100%;
+      height: 200px;
+      object-fit: cover;
       border-radius: 10px;
     }
-    h1 {
-      color: #ff4d6d;
-    }
     .price {
-      font-size: 1.5rem;
       color: green;
-      margin: 1rem 0;
+      font-size: 1.3rem;
+      margin: 0.5rem 0;
     }
     .btn {
       background-color: #28a745;
       color: white;
-      padding: 1rem;
-      display: block;
-      text-align: center;
-      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      display: inline-block;
       text-decoration: none;
-      font-size: 1.2rem;
-      margin: 1rem 0;
-    }
-    .features {
-      margin-top: 1.5rem;
-      padding-left: 1rem;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-top: 0.5rem;
     }
     footer {
       background-color: #222;
@@ -64,24 +67,64 @@
 </head>
 <body>
   <header>
-    <h1>BlendSip™ India</h1>
-    <p>Portable USB Juicer Bottle</p>
+    <h1>BlendSip™ Online Store</h1>
+    <p>Affordable Home & Lifestyle Products</p>
   </header>
-  <div class="container">
-    <img src="https://i.imgur.com/GGLxkAo.png" alt="BlendSip Portable Juicer">
-    <h2>Juice in 30 Seconds Anywhere!</h2>
-    <p class="price">₹999 <del style="color: grey; font-size: 1rem;">₹1,499</del></p>
-    <a href="https://wa.me/918516827210?text=Hi%20I%20want%20to%20order%20the%20BlendSip%20Juicer" class="btn">Order on WhatsApp</a>
-    <ul class="features">
-      <li>🏠 USB Rechargeable</li>
-      <li>✨ 6 Stainless Steel Blades</li>
-      <li>🚗 Free Home Delivery</li>
-      <li>✉️ COD Available</li>
-      <li>☕ 400ml Capacity</li>
-    </ul>
+
+  <div class="store">
+
+    <!-- Product 1 -->
+    <div class="product">
+      <img src="https://i.imgur.com/GGLxkAo.png" alt="USB Juicer Bottle">
+      <h3>USB Juicer Bottle</h3>
+      <p class="price">₹999 <s style="color: grey;">₹1499</s></p>
+      <a href="https://wa.me/918516827210?text=I%20want%20USB%20Juicer" class="btn">Order Now</a>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product">
+      <img src="https://i.imgur.com/wKVh1O5.jpg" alt="Smart Bottle">
+      <h3>LED Temp Smart Water Bottle</h3>
+      <p class="price">₹799 <s style="color: grey;">₹1299</s></p>
+      <a href="https://wa.me/918516827210?text=I%20want%20Smart%20Bottle" class="btn">Order Now</a>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product">
+      <img src="https://i.imgur.com/UkD2jBP.jpg" alt="Lunch Box">
+      <h3>Electric Heating Lunch Box</h3>
+      <p class="price">₹1199 <s style="color: grey;">₹1999</s></p>
+      <a href="https://wa.me/918516827210?text=I%20want%20Lunch%20Box" class="btn">Order Now</a>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product">
+      <img src="https://i.imgur.com/ahMpOmG.jpg" alt="Facial Steamer">
+      <h3>Mini Facial Steamer</h3>
+      <p class="price">₹499 <s style="color: grey;">₹899</s></p>
+      <a href="https://wa.me/918516827210?text=I%20want%20Facial%20Steamer" class="btn">Order Now</a>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="product">
+      <img src="https://i.imgur.com/GsNV1pz.jpg" alt="Table Lamp">
+      <h3>Touch Sensor Table Lamp</h3>
+      <p class="price">₹699 <s style="color: grey;">₹1199</s></p>
+      <a href="https://wa.me/918516827210?text=I%20want%20Table%20Lamp" class="btn">Order Now</a>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="product">
+      <img src="https://i.imgur.com/zYguX0v.jpg" alt="Shower Head">
+      <h3>High Pressure Shower Head</h3>
+      <p class="price">₹349 <s style="color: grey;">₹599</s></p>
+      <a href="https://wa.me/918516827210?text=I%20want%20Shower%20Head" class="btn">Order Now</a>
+    </div>
+
   </div>
+
   <footer>
-    &copy; 2025 BlendSip™ India. All rights reserved.
+    © 2025 BlendSip™ India. All rights reserved.
   </footer>
 </body>
-</html>
+        </html>
