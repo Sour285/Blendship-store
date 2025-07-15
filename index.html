@@ -16,57 +16,68 @@
     header {
       background-color: #ff4d6d;
       color: white;
-      padding: 1rem;
+      padding: 1.5rem 1rem;
       text-align: center;
     }
     nav {
       background: white;
       display: flex;
-      justify-content: flex-end;
-      padding: 0.5rem 1rem;
+      justify-content: center;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     nav a {
-      margin-left: 1rem;
+      margin: 0 1.5rem;
       text-decoration: none;
       color: #ff4d6d;
       font-weight: bold;
+      font-size: 1.1rem;
     }
-    .container {
-      max-width: 600px;
-      margin: auto;
+    .hero {
+      max-width: 1000px;
+      margin: 2rem auto;
       padding: 2rem;
       background: white;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
       text-align: center;
     }
-    img {
+    .hero img {
       width: 100%;
+      max-height: 400px;
+      object-fit: cover;
       border-radius: 10px;
+      margin-bottom: 1.5rem;
     }
-    h1 {
+    .hero h2 {
       color: #ff4d6d;
+      font-size: 2rem;
     }
     .price {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       color: green;
       margin: 1rem 0;
     }
     .btn {
       background-color: #28a745;
       color: white;
-      padding: 1rem;
+      padding: 1rem 2rem;
       display: inline-block;
       text-align: center;
-      border-radius: 8px;
+      border-radius: 10px;
       text-decoration: none;
       font-size: 1.2rem;
-      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+    .btn:hover {
+      background-color: #218838;
     }
     .features {
       text-align: left;
       font-size: 1rem;
-      margin-top: 1rem;
+      margin-top: 2rem;
+      padding: 0 2rem;
+      line-height: 1.6;
     }
     footer {
       background-color: #222;
@@ -74,31 +85,35 @@
       text-align: center;
       padding: 2rem;
       margin-top: 2rem;
+      font-size: 0.95rem;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>BlendSip™ India</h1>
-    <p>Portable USB Juicer Bottle</p>
+    <p>Portable USB Juicer Bottle Store</p>
   </header>  <nav>
     <a href="#">Home</a>
     <a href="#">Login</a>
     <a href="#">Signup</a>
-  </nav>  <div class="container">
-    <img src="juicer.jpg" alt="BlendSip Portable Juicer">
-    <h2>Juice in 30 Seconds Anywhere!</h2>
+  </nav>  <section class="hero">
+    <img src="https://i.imgur.com/GGLxkAo.png" alt="Juicer Hero Image">
+    <h2>Fresh Juice Anywhere, Anytime!</h2>
     <p class="price">₹999 <del style="color: grey; font-size: 1rem;">₹1,499</del></p>
-    <a href="https://wa.me/918516827210?text=Hi%20I%20want%20to%20order%20the%20BlendSip%20Juicer" class="btn">Order on WhatsApp</a>
-    <ul class="features">
-      <li>🏠 USB Rechargeable</li>
-      <li>✨ 6 Stainless Steel Blades</li>
-      <li>🚗 Free Home Delivery</li>
-      <li>✉️ COD Available</li>
-      <li>☕ 400ml Capacity</li>
-    </ul>
-  </div>  <footer>
-    © 2025 BlendSip™ India. All rights reserved.
+    <a href="https://wa.me/918516827210?text=Hi%20I%20want%20to%20order%20the%20BlendSip%20Juicer" class="btn">Order Now on WhatsApp</a><div class="features">
+  <h3>Product Features:</h3>
+  <ul>
+    <li>🔋 Rechargeable via USB – perfect for travel</li>
+    <li>⚙️ 6 Stainless Steel Blades for powerful blending</li>
+    <li>🚚 Free Home Delivery across India</li>
+    <li>📦 Cash on Delivery available</li>
+    <li>🥤 400ml BPA-free Portable Bottle</li>
+  </ul>
+</div>
+
+  </section>  <footer>
+    © 2025 BlendSip™ India. All rights reserved. | Designed for your healthy lifestyle 💚
   </footer>
 </body>
 </html>
