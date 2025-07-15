@@ -2,40 +2,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BlendSip™ India | Online Store</title>
+  <title>BlendSip™ Store | Shop Now</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      padding: 0;
-      background: #fefefe;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f9fa;
     }
     header {
-      background: #ff4d6d;
+      background: #2874f0;
       color: white;
-      padding: 1.2rem;
-      text-align: center;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    .user-greet {
+      font-size: 1rem;
     }
     nav {
       background: #fff;
-      padding: 1rem;
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
-      border-bottom: 1px solid #eee;
+      gap: 2rem;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     nav a {
       text-decoration: none;
       font-weight: bold;
-      color: #ff4d6d;
+      color: #2874f0;
     }
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
       padding: 2rem;
       max-width: 1200px;
       margin: auto;
@@ -43,49 +49,45 @@
     .product {
       background: white;
       padding: 1rem;
-      border-radius: 10px;
+      border-radius: 12px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .product:hover {
+      transform: scale(1.03);
     }
     .product img {
       width: 100%;
-      height: 200px;
+      height: 260px;
       object-fit: cover;
       border-radius: 10px;
     }
     .product h3 {
-      margin: 0.5rem 0;
-      font-size: 1.1rem;
+      margin-top: 0.8rem;
     }
-    .price {
-      color: green;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-    .stars {
-      color: gold;
-      margin: 0.3rem 0;
-    }
+    .price { color: green; font-weight: bold; font-size: 1.2rem; }
+    .stars { color: gold; margin: 0.4rem 0; }
     .btn {
-      background: #28a745;
+      background: #ff5722;
       color: white;
       padding: 0.6rem 1rem;
+      border-radius: 8px;
       text-decoration: none;
-      border-radius: 6px;
       display: inline-block;
-      margin-top: 0.5rem;
+      margin-top: 0.8rem;
     }
     .auth-forms {
       max-width: 400px;
       margin: 2rem auto;
-      padding: 2rem;
       background: #fff;
-      border-radius: 10px;
+      padding: 2rem;
+      border-radius: 12px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
     .auth-forms h2 {
+      color: #2874f0;
       text-align: center;
-      color: #ff4d6d;
     }
     .auth-forms input {
       width: 100%;
@@ -96,7 +98,7 @@
     }
     .auth-forms button {
       width: 100%;
-      background: #ff4d6d;
+      background: #2874f0;
       color: white;
       padding: 0.8rem;
       border: none;
@@ -105,17 +107,16 @@
       margin-top: 0.8rem;
     }
     footer {
-      text-align: center;
       background: #222;
       color: white;
+      text-align: center;
       padding: 1rem;
-      margin-top: 2rem;
     }
   </style>
 </head>
-<body>  <header>
-    <h1>BlendSip™ India</h1>
-    <p>Multi Product Online Store</p>
+<body onload="greetUser()">  <header>
+    <h1>BlendSip™ Store</h1>
+    <div class="user-greet" id="greeting">Welcome, Guest</div>
   </header>  <nav>
     <a href="#">Home</a>
     <a href="#login">Login</a>
@@ -158,16 +159,39 @@
     </div>
   </section>  <div class="auth-forms" id="login">
     <h2>Login</h2>
-    <input type="email" placeholder="Email">
-    <input type="password" placeholder="Password">
-    <button>Login</button>
+    <input type="email" id="loginEmail" placeholder="Email">
+    <input type="password" id="loginPass" placeholder="Password">
+    <button onclick="loginUser()">Login</button>
   </div>  <div class="auth-forms" id="signup">
     <h2>Signup</h2>
-    <input type="text" placeholder="Full Name">
-    <input type="email" placeholder="Email">
-    <input type="password" placeholder="Password">
-    <button>Create Account</button>
+    <input type="text" id="signupName" placeholder="Full Name">
+    <input type="email" id="signupEmail" placeholder="Email">
+    <input type="password" id="signupPass" placeholder="Password">
+    <button onclick="signupUser()">Create Account</button>
   </div>  <footer>
-    &copy; 2025 BlendSip™ India. All rights reserved.
-  </footer></body>
+    &copy; 2025 BlendSip™ Store. All rights reserved.
+  </footer>  <script>
+    function signupUser() {
+      const name = document.getElementById('signupName').value;
+      if(name) {
+        localStorage.setItem('blendUser', name);
+        alert('Account created! Now login.');
+      }
+    }
+    function loginUser() {
+      const name = localStorage.getItem('blendUser');
+      if(name) {
+        document.getElementById('greeting').innerText = `Welcome, ${name}`;
+        alert('Logged in successfully');
+      } else {
+        alert('No account found. Please signup first.');
+      }
+    }
+    function greetUser() {
+      const name = localStorage.getItem('blendUser');
+      if(name) {
+        document.getElementById('greeting').innerText = `Welcome, ${name}`;
+      }
+    }
+  </script></body>
 </html>
