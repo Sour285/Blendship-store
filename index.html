@@ -2,13 +2,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BlendSip™ Store | Shop Now</title>
+  <title>BlendSip™ Store | Flipkart Style</title>
   <style>
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f8f9fa;
+      background: #f1f3f6;
     }
     header {
       background: #2874f0;
@@ -40,7 +40,7 @@
     }
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
       padding: 2rem;
       max-width: 1200px;
@@ -52,57 +52,65 @@
       border-radius: 12px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       text-align: center;
-      transition: transform 0.2s ease;
     }
-    .product:hover {
-      transform: scale(1.03);
-    }
-    .product img {
+    .product img.main-img {
       width: 100%;
-      height: 260px;
+      height: 240px;
       object-fit: cover;
       border-radius: 10px;
     }
-    .product h3 {
-      margin-top: 0.8rem;
+    .thumbs {
+      margin-top: 0.5rem;
     }
-    .price { color: green; font-weight: bold; font-size: 1.2rem; }
+    .thumbs img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      margin: 0.3rem;
+      cursor: pointer;
+    }
+    .thumbs img:hover {
+      border-color: #2874f0;
+    }
+    .price { color: green; font-weight: bold; font-size: 1.2rem; margin: 0.5rem 0; }
     .stars { color: gold; margin: 0.4rem 0; }
     .btn {
       background: #ff5722;
       color: white;
-      padding: 0.6rem 1rem;
-      border-radius: 8px;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
       text-decoration: none;
       display: inline-block;
-      margin-top: 0.8rem;
+      margin: 0.5rem;
     }
-    .auth-forms {
-      max-width: 400px;
-      margin: 2rem auto;
+    .form-section {
       background: #fff;
       padding: 2rem;
-      border-radius: 12px;
+      max-width: 500px;
+      margin: 2rem auto;
+      border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
-    .auth-forms h2 {
-      color: #2874f0;
+    .form-section h2 {
       text-align: center;
+      color: #2874f0;
     }
-    .auth-forms input {
+    .form-section input, .form-section textarea {
       width: 100%;
       padding: 0.8rem;
       margin: 0.5rem 0;
       border: 1px solid #ccc;
       border-radius: 6px;
     }
-    .auth-forms button {
-      width: 100%;
+    .form-section button {
       background: #2874f0;
       color: white;
       padding: 0.8rem;
       border: none;
       border-radius: 6px;
+      width: 100%;
       font-size: 1rem;
       margin-top: 0.8rem;
     }
@@ -111,6 +119,7 @@
       color: white;
       text-align: center;
       padding: 1rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
@@ -121,53 +130,38 @@
     <a href="#">Home</a>
     <a href="#login">Login</a>
     <a href="#signup">Signup</a>
+    <a href="#address">Address</a>
   </nav>  <section class="products">
     <div class="product">
-      <img src="https://i.imgur.com/GGLxkAo.png" alt="Juicer">
+      <img class="main-img" id="mainJuicer" src="https://raw.githubusercontent.com/Sour285/Blendship-store/main/images/juicer1.jpg" alt="Juicer">
+      <div class="thumbs">
+        <img src="https://raw.githubusercontent.com/Sour285/Blendship-store/main/images/juicer2.jpg" onclick="document.getElementById('mainJuicer').src=this.src">
+        <img src="https://raw.githubusercontent.com/Sour285/Blendship-store/main/images/juicer3.jpg" onclick="document.getElementById('mainJuicer').src=this.src">
+        <img src="https://raw.githubusercontent.com/Sour285/Blendship-store/main/images/juicer4.jpg" onclick="document.getElementById('mainJuicer').src=this.src">
+      </div>
       <h3>USB Juicer Bottle</h3>
       <div class="stars">★★★★★</div>
       <p class="price">₹999</p>
       <a href="https://wa.me/918516827210?text=I%20want%20Juicer" class="btn">Order Now</a>
     </div>
-    <div class="product">
-      <img src="https://i.imgur.com/yKqO5nU.jpg" alt="Shoes">
-      <h3>Trendy Sneakers</h3>
-      <div class="stars">★★★★☆</div>
-      <p class="price">₹1499</p>
-      <a href="https://wa.me/918516827210?text=I%20want%20Shoes" class="btn">Order Now</a>
-    </div>
-    <div class="product">
-      <img src="https://i.imgur.com/muWlczW.jpg" alt="Camera">
-      <h3>Mini Vlog Camera</h3>
-      <div class="stars">★★★★☆</div>
-      <p class="price">₹2299</p>
-      <a href="https://wa.me/918516827210?text=I%20want%20Camera" class="btn">Order Now</a>
-    </div>
-    <div class="product">
-      <img src="https://i.imgur.com/KbWv8Bo.jpg" alt="Shirt">
-      <h3>Casual Cotton Shirt</h3>
-      <div class="stars">★★★★★</div>
-      <p class="price">₹699</p>
-      <a href="https://wa.me/918516827210?text=I%20want%20Shirt" class="btn">Order Now</a>
-    </div>
-    <div class="product">
-      <img src="https://i.imgur.com/WXnYqxn.jpg" alt="Kurti">
-      <h3>Stylish Women Kurti</h3>
-      <div class="stars">★★★★★</div>
-      <p class="price">₹899</p>
-      <a href="https://wa.me/918516827210?text=I%20want%20Kurti" class="btn">Order Now</a>
-    </div>
-  </section>  <div class="auth-forms" id="login">
+  </section>  <div class="form-section" id="login">
     <h2>Login</h2>
     <input type="email" id="loginEmail" placeholder="Email">
     <input type="password" id="loginPass" placeholder="Password">
     <button onclick="loginUser()">Login</button>
-  </div>  <div class="auth-forms" id="signup">
+  </div>  <div class="form-section" id="signup">
     <h2>Signup</h2>
     <input type="text" id="signupName" placeholder="Full Name">
     <input type="email" id="signupEmail" placeholder="Email">
     <input type="password" id="signupPass" placeholder="Password">
     <button onclick="signupUser()">Create Account</button>
+  </div>  <div class="form-section" id="address">
+    <h2>Shipping Address</h2>
+    <input type="text" placeholder="Full Name">
+    <input type="text" placeholder="Phone Number">
+    <textarea rows="3" placeholder="Full Address"></textarea>
+    <input type="text" placeholder="Pin Code">
+    <button>Place Order</button>
   </div>  <footer>
     &copy; 2025 BlendSip™ Store. All rights reserved.
   </footer>  <script>
